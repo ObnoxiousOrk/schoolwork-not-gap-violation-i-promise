@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CS3101_P2</title>
+  <style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title"><div class="line-block">CS3101 Databases<br />
+Practical 2 – Implementation</div></h1>
+<p class="author"><div class="line-block">School of Computer
+Science<br />
+University of St Andrews</div></p>
+<p class="date"><div class="line-block">Due Friday 5th April, weighting
+60% of coursework<br />
+MMS is the definitive source for deadlines and weightings.</div></p>
+</header>
+<p>You are expected to have read and understood all the information in
+this specification and any accompanying documents at least a week before
+the deadline. You must contact the lecturer regarding any queries well
+in advance of the deadline.</p>
+<h1 id="aimlearning-objectives">Aim/Learning objectives</h1>
+<p>The aim of this assignment is to promote awareness of issues involved
+in using databases and database connections.</p>
+<h1 id="requirements">Requirements</h1>
+<p>You are required to produce a database and a simple graphical user
+interface for the scenario described in the <a href="#database-scenario">Database scenario</a> section. You will need
+to create MariaDB tables, populate them, produce specified queries and
+procedures, enforce appropriate constraints, and produce a user
+interface for part of the system. Finally, you will compose a single
+word-processed document in PDF format, showing evidence of your
+practical work and justifying design and implementation decisions. The
+code, report and dump of the database must be submitted to MMS.</p>
+<h2 id="details">Details</h2>
+<ol type="1">
+<li><p>Create a MariaDB database and tables corresponding to the schema
+described in the <a href="#relational-schema">Relational schema</a>
+section and populate your tables with the sample data from the <a href="#sample-data">Sample data</a> section. You will need to choose
+appropriate SQL datatypes and integrity constraints, such as uniqueness,
+nullability and permissible values.</p>
+<p>The implementation must be on the School MariaDB servers. For
+information on how to connect, see the <a href="#mariadb-host-services">MariaDB &amp; Host services</a>
+section.</p></li>
+<li><p>Specify each of the queries below in SQL and run them against
+your database. Once you have finalised your queries, define views in the
+database to represent these queries and give them the names
+specified.</p>
+<ol type="a">
+<li><p>Produce a table for conveniently looking up a species’ scientific
+name by its common name. The query should return one row per common
+name, and should contain the following columns:</p>
+<p>Common name, Scientific name</p>
+<p>where “Scientific name” is the full scientific name formed from the
+genus name and species epithet. The result should be ordered
+alphabetically by common name. Save your query as a view named
+<code>view_common_name_lookup</code>.</p></li>
+<li><p>List the <em>average</em> latitude and longitude of sightings by
+each user, to give an indication of whereabouts in the country they do
+most of their birding. The query should return one row per user, and
+should contain the following columns:</p>
+<p>Display name, Home latitude, Home longitude, Average latitude,
+Average longitude</p>
+<p>The result should be ordered by average latitude from north to south.
+Save your query as a view named
+<code>view_average_location</code>.</p></li>
+<li><p>List the species of crow that have so far been spotted by users,
+along with the number of times they have been spotted. The query should
+return one row per spotted crow species, and should contain the
+following columns:</p>
+<p>Common name(s), Scientific name, Sightings</p>
+<p>If there are several common names, they should be listed together
+separated by a forward slash symbol. “Scientific name” should be the
+full scientific name formed from the genus name and species epithet. A
+crow is any species that belongs to the family “Crows”. The result
+should be ordered by number of sightings from highest to lowest, then by
+scientific name. Save your query as a view named
+<code>view_crow_frequency</code>.</p></li>
+</ol></li>
+<li><p>Enforce each of the following constraints. You may use checks,
+triggers, procedures or any other appropriate mechanism.</p>
+<ol type="a">
+<li><p>Ensure that a user’s email address is no more than 320 characters
+long and contains an <code>@</code> symbol.</p></li>
+<li><p>Ensure that latitude and longitude values are always in the
+appropriate range as described in the <a href="#database-scenario">Database scenario</a> section.</p></li>
+</ol></li>
+<li><p>Provide the following functionality using functions and
+procedures.</p>
+<ol type="a">
+<li><p>Provide a function to find the distance in kilometres between two
+locations. The function should be called
+<code>func_earth_distance</code>, and it should have precisely 4 inputs:
+the latitude <span class="math inline"><em>ϕ</em><sub>1</sub></span> and
+longitude <span class="math inline"><em>λ</em><sub>1</sub></span> of the
+first location, and the latitude <span class="math inline"><em>ϕ</em><sub>2</sub></span> and longitude <span class="math inline"><em>λ</em><sub>2</sub></span> of the second
+location.</p>
+<p>This is a rather complicated thing to work out mathematically, but it
+is possible using the Haversine formula. After converting all the inputs
+from degrees to radians, calculate the internal angle <span class="math inline"><em>A</em></span> using the formula <span class="math display"><em>A</em> = (sin((<em>ϕ</em><sub>2</sub>−<em>ϕ</em><sub>1</sub>)/2))<sup>2</sup> + cos (<em>ϕ</em><sub>1</sub>)cos (<em>ϕ</em><sub>2</sub>)(sin((<em>λ</em><sub>2</sub>−<em>λ</em><sub>1</sub>)/2))<sup>2</sup>.</span>
+Then the distance is equal to <span class="math display">2<em>r</em> ⋅ atan2(sqrt(<em>A</em>),sqrt(1−<em>A</em>))</span>
+where <span class="math inline"><em>r</em></span> is the average radius
+of the earth, 6371 kilometres.</p>
+<p><strong>Note:</strong> This won’t be very accurate for short
+distances, but if you use the DOUBLE type for intermediate variables in
+your function, it should be a reasonable approximation of long
+distances.</p>
+<p><strong>Note:</strong> Recall the SQL built-in functions
+<code>PI</code>, <code>SQRT</code>, <code>SIN</code>, <code>COS</code>
+and <code>ATAN2</code>, any of which might be useful.</p></li>
+<li><p>Provide a procedure to add a new user to the <code>user</code>
+table. The procedure should be called <code>proc_add_user</code>, and it
+should have precisely 5 inputs: the person’s email address, display
+name, home latitude and longitude, and the hash of their password (in
+this order). The user’s salted hashed password should be computed and
+stored, as described in the <a href="#passwords">Passwords</a>
+section.</p></li>
+<li><p>Provide a function to verify a user’s email and password when
+they attempt to log in. The function should be called
+<code>func_valid_credentials</code>, and it should have precisely 2
+inputs: an email address and a hashed password. It should do any
+appropriate hashing and return a boolean that states whether that
+email/password combination represents a valid login.</p></li>
+</ol></li>
+<li><p>Design and implement a user-friendly graphical interface for the
+system, which interacts with your database. A user of your interface
+should not have to enter any SQL or read any SQL at any point.</p>
+<p>Before doing anything else, a user must log in with a correct
+username and password. After successfully logging in, the user should be
+able to view records of all their own sightings, add new ones and delete
+existing ones. They should also be able to change their display
+name.</p>
+<p>A user should not be able to see any sightings belonging to other
+users.</p>
+<p>If any submitted information violates the constraints of the
+database, an appropriate human-readable error message should be shown to
+the user. The user should never have to think about the implementation
+of the database, or even know that it uses SQL.</p>
+<p>You <strong>must</strong> implement the GUI as a Java application.
+Some starter code is provided on StudRes in the <code>gui</code>
+directory, which you may alter as much as you wish. Usage instructions
+are included in the <code>README</code> file.</p>
+<p>It is very important that you include instructions on running your
+GUI from the command line. Update the instructions in the
+<code>README</code> if they are not sufficient for your program by the
+time it is finished.</p>
+<p><strong>Note:</strong> While user-friendliness is important, the
+visuals of the program are not an important part of this submission.
+We’re not interested in whether the UI looks good, so long as it has
+good functionality and error handling, presents the data clearly, and
+allows the user to conduct tasks without unnecessary extra
+work.</p></li>
+<li><p>Write a report discussing your design and implementation. Try to
+concentrate on why you did something rather than merely on what you did.
+The document should explain and justify any decisions at the design and
+implementation stages and should contain headed sections for the
+following 4 elements:</p>
+<ol type="a">
+<li><p><strong>Compilation, execution &amp; usage instruction</strong>:
+A clear statement of what languages and frameworks have been used to
+implement the user interface. Instructions for compiling, running and
+using your interface.</p></li>
+<li><p><strong>Overview</strong>: A short overview summarising the
+functionality of your implementation, including any extensions and
+interesting features, indicating the level of completeness with respect
+to the requirements listed above.</p></li>
+<li><p><strong>Database implementation</strong>: A summary listing the
+MariaDB tables, triggers, views, queries, functions and procedures in
+the database, along with a short description of the purpose, interesting
+features and implementation decisions associated with each. For each of
+the queries and views, include screenshots or textual output from
+executing them on your database.</p></li>
+<li><p><strong>GUI implementation</strong>: A summary listing the files
+for your GUI stating the purpose of each file, along with a clear
+indication of which files or code fragments you wrote from scratch,
+which you modified from examples that were given in class, and which you
+sourced from elsewhere. There is no need to mention the starter
+code.</p></li>
+</ol>
+<p>Include a discussion of the interesting features, design and
+implementation decisions you made when implementing your GUI.</p>
+<p>Please ensure that your screenshots are legible in the document you
+submit.</p></li>
+</ol>
+<h2 id="extensions">Extensions</h2>
+<p>Once you have built a basic working solution, fulfilling the
+functional requirements listed above, you may choose to implement
+additional views, functions, procedures and triggers to improve the data
+consistency and ease of use of the database. For any such additional
+feature, explain the purpose and justify why it is interesting and
+useful: what features does it add to the system and what SQL features
+does it demonstrate that have not already been shown in your other
+queries?</p>
+<p>Extending the GUI to include additional user-facing functionality is
+not recommended. It would be better to ensure that the required features
+of your GUI are implemented cleanly, with a simple user-friendly
+interface, excellent error handling and elegant code.</p>
+<h2 id="word-limit">Word limit</h2>
+<p>An advisory word limit of 2000 words excluding references, figures
+and appendices applies to the report. A word count must be provided at
+the end of the document.</p>
+<h2 id="submission">Submission</h2>
+<p>A zip file containing the contents listed below must be submitted
+electronically via MMS to the P2 assignment slot by the deadline.
+Submissions in any other format may be rejected.</p>
+<ul>
+<li>All the source files for your interface.</li>
+<li>A dump file for your MariaDB database (see <a href="#mariadb-host-services">MariaDB &amp; Host services</a>
+below).</li>
+<li>Your word-processed report as a PDF.</li>
+</ul>
+<p>Remember, the report should concentrate on why you did something as
+well as stating what you did. It should explain and justify important
+decisions at the design and implementation stages and should contain
+headed sections as described in the <a href="#details">Details</a>
+section.</p>
+<h1 id="assessment-criteria">Assessment criteria</h1>
+<p>Marking will follow the guidelines given in the school student
+handbook (see link in the <a href="#marking">Marking</a> section).</p>
+<p>The following aspects will also be considered:</p>
+<ul>
+<li>Completeness of the implementation with respect to the requirements,
+including database, GUI and report.</li>
+<li>Quality of the database implementation – appropriate tables,
+attributes, datatypes, constraints, functions, procedures, views,
+etc.</li>
+<li>Quality of the GUI implementation – decomposition into appropriate
+functions/methods, classes; in-code documentation; etc.</li>
+<li>Quality of the report – depth and clarity of explanations;
+justification of design and implementation decisions for database and
+GUI; etc.</li>
+<li>Additional functionality or features.</li>
+</ul>
+<h1 id="policies-and-guidelines">Policies and guidelines</h1>
+<h2 id="marking">Marking</h2>
+<p>See the standard mark descriptors in the School Student Handbook: <a href="https://info.cs.st-andrews.ac.uk/student-handbook/learning-teaching/feedback.html#Mark_Descriptors" class="uri">https://info.cs.st-andrews.ac.uk/student-handbook/learning-teaching/feedback.html#Mark_Descriptors</a></p>
+<h2 id="lateness-penalty">Lateness penalty</h2>
+<p>The standard penalty for late submission applies (Scheme A: 1 mark
+per 24-hour period, or part thereof): <a href="https://info.cs.st-andrews.ac.uk/student-handbook/learning-teaching/assessment.html#lateness-penalties" class="uri">https://info.cs.st-andrews.ac.uk/student-handbook/learning-teaching/assessment.html#lateness-penalties</a></p>
+<h2 id="good-academic-practice">Good academic practice</h2>
+<p>The University policy on Good Academic Practice applies: <a href="https://www.st-andrews.ac.uk/students/rules/academicpractice/" class="uri">https://www.st-andrews.ac.uk/students/rules/academicpractice/</a></p>
+<h1 id="mariadb-host-services">MariaDB &amp; Host services</h1>
+<p>The School provides every user with access to a host server
+(username.teaching.cs.st-andrews.ac.uk) running a MariaDB service. To
+use the service, you must ssh into your host server, retrieve your
+MariaDB credentials, create a database, and select it for use.</p>
+<p>You can find detailed information about how to do this, and about the
+MariaDB service more generally, on the School wiki at <a href="https://wiki.cs.st-andrews.ac.uk/index.php?title=Teaching_Service#MariaDB" class="uri">https://wiki.cs.st-andrews.ac.uk/index.php?title=Teaching_Service#MariaDB</a></p>
+<p>To generate a dump file for a database you must ssh into your host
+server, change to the directory you wish to create the dump file in,
+then run the following command:</p>
+<pre><code>mysqldump --routines -p database_name &gt; filename.sql</code></pre>
+<p>with <code>database_name</code> replaced with the name of the
+database you want to dump (e.g. <code>mct25_CS3101_P2</code>), and
+<code>filename.sql</code> replaced with the name of the file you want to
+dump the database to (e.g. <code>mct25_CS3101_P2_dump.sql</code>). You
+will be prompted to enter your MariaDB password.</p>
+<p>If successful, the dump file should contain all the SQL DDL
+statements required to recreate your database, including definitions for
+tables, view, procedures, functions, triggers, as well as statements to
+load all the data. You can check this by opening the file in any text
+editor and examining the contents or by loading the dump file into a new
+database.</p>
+<h1 id="database-scenario">Database scenario</h1>
+<p>A small online community of bird enthusiasts wishes to set up a
+simple birdspotting application, with a connected database, to store and
+browse information on users and the birds they have spotted.</p>
+<p>For verification and reference, the system stores information about
+all 268 species of British birds. Each species has a unique
+<strong>scientific name</strong>, which consists of two parts: the
+<strong>genus name</strong> and the <strong>species epithet</strong>.
+For example, in the scientific name <em>Falco peregrinus</em>, the genus
+name is <em>Falco</em> and the species epithet is <em>peregrinus</em>.
+Each species also has one or more <strong>common names</strong>, which
+non-scientists are more likely to use. Each bird belongs to one of the
+55 bird <strong>families</strong>, such as “Finches” or “Gulls and
+terns”.</p>
+<p>Users should of course be tracked in the system. Each user has a
+unique <strong>email address</strong>, which can be used to contact them
+with news and updates. A user also has a <strong>display name</strong>,
+which can be shown to other users; and a <strong>password</strong>,
+which is used along with their email when they log into the system’s
+GUI. Finally, a user can set their <strong>home location</strong>.</p>
+<p>The main purpose of the system is that users can log birds that they
+have spotted. Each <strong>sighting</strong> records the email address
+of the user that spotted it, the scientific name of the bird identified,
+and the date and location that the sighting took place.</p>
+<p>All locations are stored as two numbers: a <strong>latitude</strong>
+and <strong>longitude</strong>. Latitude is in degrees north of the
+equator, and longitude is in degrees east of the prime meridian. Each
+value can be negative, and must fall in the range <span class="math display"> − 90 &lt; <em>x</em> ≤ 90.</span> For privacy
+purposes, the database will only store these values with a precision of
+2 decimal places.</p>
+<h2 id="passwords">Passwords</h2>
+<p>It is considered bad practice to store plain-text passwords in a
+database, since a data breach would reveal a user’s password, which they
+might have reused for other services. Instead, <em>hashing</em> is used
+so that the database only stores a value computed from the password in a
+non-reversible way.</p>
+<p>When a user enters their password <span class="math inline"><em>p</em></span> into the GUI, the application
+should <strong>hash</strong> the password using the SHA-256 algorithm,
+to produce a string <span class="math inline"><em>h</em></span> which is
+then sent to the database. A method for this has been provided in the
+starter code.</p>
+<p>To make things even more secure, the database does not even store the
+hashed password <span class="math inline"><em>h</em></span>. Instead, it
+stores a <strong>salted</strong> version of it: the database takes <span class="math inline"><em>h</em></span>, appends an arbitrary string such
+as <code>BIRDS</code> to the end of it, and then hashes it again with
+the SHA-256 algorithm to produce a salted hash <span class="math inline"><em>s</em></span> which is stored. This way, a data
+breach would not reveal the user’s password or even its hashed version.
+When a user logs in with their hashed password <span class="math inline"><em>h</em></span>, the process can be repeated and
+the salted version <span class="math inline"><em>s</em></span> can be
+compared with the value for <span class="math inline"><em>s</em></span>
+stored in the database.</p>
+<p>Stored functions and procedures should be included in the database to
+make this easier.</p>
+<h2 id="relational-schema">Relational schema</h2>
+<p>This is the relational schema which you should follow when
+implementing the birding database. You should choose appropriate data
+types and constraints in SQL when converting, and consider carefully
+what the foreign key constraints (marked with *) should reference.</p>
+<p>Make sure to use the <strong>exact names shown</strong> for tables
+and attributes in your database.</p>
+<p>Primary key attributes are shown in <strong>bold</strong>.</p>
+<p>family = ( <strong>name</strong>: String )</p>
+<p>species = ( <strong>genus_name</strong>: String,
+<strong>species_epithet</strong>: String, family_name*: String )</p>
+<p>common_name = ( <strong>genus_name</strong>*: String,
+<strong>species_epithet</strong>*: String,
+<strong>common_name</strong>: String )</p>
+<p>user = ( <strong>email</strong>: String, display_name: String,
+home_latitude: Number, home_longitude: Number,
+salted_password_hash: String )</p>
+<p>sighting = ( <strong>id</strong>: Integer, user_email*: String,
+genus_name*: String, species_epithet*: String, date_spotted: Date,
+latitude: Number, longitude: Number )</p>
+<h2 id="sample-data">Sample data</h2>
+<p>Until now, the users of the system have been storing all their data
+in a single spreadsheet (<code>all-data.ods</code>) to which they all
+have write access. This spreadsheet contains a total of 5 sheets, which
+includes everything you need to populate the database with.</p>
+<p>The information has been recorded successfully in the spreadsheet,
+but it’s not normalised or organised very well, and there are various
+notes and unnecessary pieces of information that aren’t needed for the
+database. You will need to manipulate, normalise and sanitise the data
+prior to inserting into your database.</p>
+<p>You can find the spreadsheet here: <a href="https://studres.cs.st-andrews.ac.uk/CS3101/Coursework/P2/all_data.ods" class="uri">https://studres.cs.st-andrews.ac.uk/CS3101/Coursework/P2/all_data.ods</a></p>
+</body>
+</html>
