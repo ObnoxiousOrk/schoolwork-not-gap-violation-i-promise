@@ -1,15 +1,18 @@
 -- 2
 -- -- a
+CREATE VIEW IF NOT EXISTS common_names AS
 SELECT common_name AS "Common Name", CONCAT(genus_name, " ", species_epithet) AS "Scientific Name"
 FROM common_name;
 
 -- -- b
+CREATE VIEW IF NOT EXISTS sighting_locations AS
 SELECT display_name AS "Display Name", home_latitude AS "Home latitude", home_longitude AS "Home longitude", AVG(latitude) AS "Average latitude", AVG(longitude) AS "Average longitude"
 FROM user, sighting
 WHERE user.email = sighting.user_email
 GROUP BY email;
 
 -- -- c
+CREATE VIEW IF NOT EXISTS crow_sightings AS
 SELECT common_name AS "Common Name(s)", CONCAT(common_name.genus_name, " ", common_name.species_epithet) AS "Scientific Name", COUNT(common_name) AS "Sightings"
 FROM common_name
 JOIN species ON common_name.genus_name = species.genus_name AND common_name.species_epithet = species.species_epithet
