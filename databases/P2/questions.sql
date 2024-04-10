@@ -84,10 +84,10 @@ DELIMITER ;
 
 -- -- b
 DELIMITER //
-CREATE PROCEDURE IF NOT EXISTS proc_add_user(email VARCHAR(320), display_name VARCHAR(512), home_latitude DOUBLE(4, 2), home_longitude DOUBLE(4, 2), password VARCHAR(64))
+CREATE PROCEDURE IF NOT EXISTS proc_add_user(email TEXT(320), display_name VARCHAR(512), home_latitude DOUBLE(4, 2), home_longitude DOUBLE(4, 2), password CHAR(64))
 BEGIN
-    DECLARE BIRDS VARCHAR(5);
-    DECLARE salted_password VARCHAR(64);
+    DECLARE BIRDS CHAR(5);
+    DECLARE salted_password CHAR(64);
 
     SET BIRDS = "BIRDS";
 
@@ -100,7 +100,7 @@ DELIMITER ;
 
 -- -- c
 DELIMITER //
-CREATE FUNCTION IF NOT EXISTS func_valid_credentials (email VARCHAR(320), password VARCHAR(64)) RETURNS BOOLEAN
+CREATE FUNCTION IF NOT EXISTS func_valid_credentials (email TEXT(320), password CHAR(64)) RETURNS BOOLEAN
 BEGIN
     DECLARE BIRDS VARCHAR(5);
     DECLARE salted_password VARCHAR(64);
