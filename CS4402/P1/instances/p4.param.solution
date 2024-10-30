@@ -1,0 +1,20 @@
+language ESSENCE' 1.0
+$ Minion SolverNodes: 2
+$ Minion SolverTotalTime: 0.019258
+$ Minion SolverTimeOut: 0
+$ Savile Row TotalTime: 0.12
+letting allRobotMoves be [[[1, 2], 
+[1, 2], 
+[1, 2], 
+[2, 2], 
+[2, 3]], 
+[[2, 1], 
+[2, 1], 
+[2, 2], 
+[2, 3], 
+[2, 4]]]
+letting invContents be [[0, 0, 2, 2, 2], 
+[0, 1, 1, 1, 1]]
+letting successes be [[false, false, false, false, true], 
+[false, false, false, false, true]]
+letting tasks be [2, 1]

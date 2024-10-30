@@ -1,0 +1,25 @@
+language ESSENCE' 1.0
+letting nrows be 7 
+letting ncols be 8
+
+letting nrobots be 3
+letting robot_pos be [[1, 2], 
+                     [5, 2],
+                     [3, 6]]
+
+letting ntasks be 4
+letting task_obj be [3, 2, 1, 4]
+letting task_dest be [[7, 1], 
+                      [2, 5],
+                      [6, 8],
+                      [4, 2]]
+
+letting time_limit be 15
+
+letting map be [[ 0, 0, 0, -1, 0, 3, 0, 0],
+                [ 0, 1, 0, -1, 0, 0, 0, 0],
+                [ 0, 0, 0, -1, 2, 0, 0, 4],
+                [ 0, 0, 0,  0, 0, 0, 0, 0],
+                [ 0, 0, -1, 0, 0, 0, 0, 0],
+                [ 1, 0, -1, 0, 0, 0, 0, 0],
+                [ 0, 0,  0, 0, 0, 0, 0, 0]]

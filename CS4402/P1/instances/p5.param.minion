@@ -1,0 +1,407 @@
+MINION 3
+# CSETopLevel_number = 0
+# CSETopLevel_eliminated_expressions = 0
+# CSETopLevel_total_size = 0
+# CSE_active_number = 43
+# CSE_active_eliminated_expressions = 147
+# CSE_active_total_size = 374
+**VARIABLES**
+DISCRETE allRobotMoves_00001_00002_00002 #
+{1..2}
+DISCRETE allRobotMoves_00001_00003_00002 #
+{1..3}
+DISCRETE allRobotMoves_00001_00004_00001 #
+{1..2}
+DISCRETE allRobotMoves_00001_00004_00002 #
+{1..4}
+DISCRETE allRobotMoves_00001_00005_00001 #
+{1..2}
+DISCRETE allRobotMoves_00001_00005_00002 #
+{1..5}
+DISCRETE allRobotMoves_00001_00006_00001 #
+{1..2}
+DISCRETE allRobotMoves_00001_00006_00002 #
+{1..5}
+DISCRETE allRobotMoves_00002_00002_00002 #
+{2..3}
+DISCRETE allRobotMoves_00002_00003_00001 #
+{1..2}
+DISCRETE allRobotMoves_00002_00003_00002 #
+{2..4}
+DISCRETE allRobotMoves_00002_00004_00001 #
+{1..2}
+DISCRETE allRobotMoves_00002_00004_00002 #
+{2..5}
+DISCRETE allRobotMoves_00002_00005_00001 #
+{1..2}
+DISCRETE allRobotMoves_00002_00005_00002 #
+{1..5}
+DISCRETE allRobotMoves_00002_00006_00001 #
+{1..2}
+DISCRETE allRobotMoves_00002_00006_00002 #
+{1..5}
+DISCRETE invContents_00001_00002 #
+{0..2}
+DISCRETE invContents_00001_00003 #
+{0..2}
+DISCRETE invContents_00001_00004 #
+{0..2}
+DISCRETE invContents_00001_00005 #
+{0..2}
+DISCRETE invContents_00001_00006 #
+{0..2}
+DISCRETE invContents_00002_00002 #
+{0..2}
+DISCRETE invContents_00002_00003 #
+{0..2}
+DISCRETE invContents_00002_00004 #
+{0..2}
+DISCRETE invContents_00002_00005 #
+{0..2}
+DISCRETE invContents_00002_00006 #
+{0..2}
+BOOL successes_00001_00005 #
+BOOL successes_00002_00004 #
+BOOL successes_00002_00005 #
+DISCRETE tasks_00001 #
+{1..2}
+DISCRETE tasks_00002 #
+{1..2}
+DISCRETE aux6 #
+{1..2}
+DISCRETE aux7 #
+{1..2}
+DISCRETE aux8 #
+{1..2}
+DISCRETE aux9 #
+{1..2}
+DISCRETE aux10 #
+{1..2}
+DISCRETE aux11 #
+{1..2}
+DISCRETE aux12 #
+{1..2}
+BOOL aux13 #Active-CSE: 2 occurrences of this expression or equivalent: (ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00002_00006_00001 + allRobotMoves_00002_00006_00002 + -5))<1)
+BOOL aux14 #Active-CSE: 2 occurrences of this expression or equivalent: (ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00001_00005_00001 + allRobotMoves_00001_00005_00002 + -5))<1)
+BOOL aux15 #Active-CSE: 2 occurrences of this expression or equivalent: (1<=ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00001_00006_00001 + allRobotMoves_00001_00006_00002 + -5)))
+BOOL aux16 #Active-CSE: 2 occurrences of this expression or equivalent: (1<=ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00002_00005_00001 + allRobotMoves_00002_00005_00002 + -5)))
+BOOL aux17 #Active-CSE: 2 occurrences of this expression or equivalent: (1<=ElementOne([-1, 0, -1, -1, 1, 2, 0, 0, 0], (-6 + 5*allRobotMoves_00002_00004_00001 + allRobotMoves_00002_00004_00002)))
+BOOL aux18 #Active-CSE: 2 occurrences of this expression or equivalent: (ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0], (5*allRobotMoves_00001_00004_00001 + allRobotMoves_00001_00004_00002 + -5))<1)
+BOOL aux19 #Active-CSE: 2 occurrences of this expression or equivalent: (1<=ElementOne([-1, 0, -1, -1, 1, 2, 0, 0], (-6 + 5*allRobotMoves_00002_00003_00001 + allRobotMoves_00002_00003_00002)))
+DISCRETE aux20 #Active-CSE: 7 occurrences of this expression or equivalent: ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00001_00005_00001 + allRobotMoves_00001_00005_00002 + -5))
+{0..2}
+DISCRETE aux21 #Active-CSE: 7 occurrences of this expression or equivalent: ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00001_00006_00001 + allRobotMoves_00001_00006_00002 + -5))
+{0..2}
+DISCRETE aux22 #Active-CSE: 7 occurrences of this expression or equivalent: ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00002_00006_00001 + allRobotMoves_00002_00006_00002 + -5))
+{0..2}
+DISCRETE aux23 #Active-CSE: 7 occurrences of this expression or equivalent: ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], (5*allRobotMoves_00002_00005_00001 + allRobotMoves_00002_00005_00002 + -5))
+{0..2}
+DISCRETE aux24 #Active-CSE: 7 occurrences of this expression or equivalent: ElementOne([-1, 0, -1, -1, 1, 2, 0, 0, 0], (-6 + 5*allRobotMoves_00002_00004_00001 + allRobotMoves_00002_00004_00002))
+{0..2}
+DISCRETE aux25 #Active-CSE: 7 occurrences of this expression or equivalent: ElementOne([-1, -1, 0, -1, -1, 1, 2, 0, 0], (5*allRobotMoves_00001_00004_00001 + allRobotMoves_00001_00004_00002 + -5))
+{0..2}
+DISCRETE aux26 #Active-CSE: 7 occurrences of this expression or equivalent: ElementOne([-1, 0, -1, -1, 1, 2, 0, 0], (-6 + 5*allRobotMoves_00002_00003_00001 + allRobotMoves_00002_00003_00002))
+{0..2}
+DISCRETE aux27 #Active-CSE: 4 occurrences of this expression or equivalent: ElementOne([2, 0], (-1 + allRobotMoves_00002_00002_00002))
+{0..2}
+**CONSTRAINTS**
+w-inintervalset(aux27, [0,0,2,2])
+**VARIABLES**
+DISCRETE aux28 #Active-CSE: 5 occurrences of this expression or equivalent: ElementOne([1, 2, 0], allRobotMoves_00001_00003_00002)
+{0..2}
+DISCRETE aux29 #Active-CSE: 2 occurrences of this expression or equivalent: ElementOne([1, 2], allRobotMoves_00001_00002_00002)
+{1..2}
+BOOL aux30 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00001_00004_00002 != allRobotMoves_00002_00004_00002)
+BOOL aux31 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00001_00004_00001 != allRobotMoves_00002_00004_00001)
+BOOL aux32 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00002_00003_00002 != allRobotMoves_00001_00003_00002)
+BOOL aux33 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00001_00005_00001 != allRobotMoves_00002_00006_00001)
+BOOL aux34 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00001_00005_00002 != allRobotMoves_00002_00006_00002)
+BOOL aux35 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00001_00004_00001 != allRobotMoves_00002_00005_00001)
+BOOL aux36 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00001_00004_00002 != allRobotMoves_00002_00005_00002)
+BOOL aux37 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00002_00006_00001 != allRobotMoves_00001_00006_00001)
+BOOL aux38 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00002_00006_00002 != allRobotMoves_00001_00006_00002)
+BOOL aux39 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00002_00005_00001 != allRobotMoves_00001_00005_00001)
+BOOL aux40 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00002_00005_00002 != allRobotMoves_00001_00005_00002)
+BOOL aux41 #Active-CSE: 3 occurrences of this expression or equivalent: (allRobotMoves_00001_00003_00002 != allRobotMoves_00002_00004_00002)
+DISCRETE aux43 #Active-CSE: 2 occurrences of this expression or equivalent: (5*allRobotMoves_00001_00004_00001 + allRobotMoves_00001_00004_00002 + -5)
+{3..9}
+**CONSTRAINTS**
+w-inintervalset(aux43, [3,3,6,9])
+**VARIABLES**
+DISCRETE aux44 #Active-CSE: 2 occurrences of this expression or equivalent: (5*allRobotMoves_00001_00006_00001 + allRobotMoves_00001_00006_00002 + -5)
+{3..10}
+**CONSTRAINTS**
+w-inintervalset(aux44, [3,3,6,10])
+**VARIABLES**
+DISCRETE aux45 #Active-CSE: 2 occurrences of this expression or equivalent: (5*allRobotMoves_00001_00005_00001 + allRobotMoves_00001_00005_00002 + -5)
+{3..10}
+**CONSTRAINTS**
+w-inintervalset(aux45, [3,3,6,10])
+**VARIABLES**
+DISCRETE aux46 #Active-CSE: 2 occurrences of this expression or equivalent: (5*allRobotMoves_00002_00006_00001 + allRobotMoves_00002_00006_00002 + -5)
+{3..10}
+**CONSTRAINTS**
+w-inintervalset(aux46, [3,3,6,10])
+**VARIABLES**
+DISCRETE aux47 #Active-CSE: 2 occurrences of this expression or equivalent: (5*allRobotMoves_00002_00005_00001 + allRobotMoves_00002_00005_00002 + -5)
+{3..10}
+**CONSTRAINTS**
+w-inintervalset(aux47, [3,3,6,10])
+**VARIABLES**
+BOOL aux48 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00002_00005=invContents_00002_00006)
+BOOL aux49 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00002_00004=invContents_00002_00005)
+BOOL aux50 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00002_00003=invContents_00002_00004)
+BOOL aux51 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00002_00002=invContents_00002_00003)
+BOOL aux52 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00001_00005=invContents_00001_00006)
+BOOL aux53 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00001_00002=invContents_00001_00003)
+BOOL aux54 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00001_00003=invContents_00001_00004)
+BOOL aux55 #Active-CSE: 3 occurrences of this expression or equivalent: (invContents_00001_00004=invContents_00001_00005)
+DISCRETE aux56 #(-6 + 5*allRobotMoves_00002_00004_00001 + allRobotMoves_00002_00004_00002)
+{1..9}
+**CONSTRAINTS**
+w-inintervalset(aux56, [1,4,6,9])
+**VARIABLES**
+DISCRETE aux57 #(-6 + 5*allRobotMoves_00002_00003_00001 + allRobotMoves_00002_00003_00002)
+{1..8}
+**CONSTRAINTS**
+w-inintervalset(aux57, [1,3,6,8])
+**VARIABLES**
+DISCRETE aux58 #(-1 + allRobotMoves_00002_00002_00002)
+{1..2}
+DISCRETE aux59 #(allRobotMoves_00001_00002_00002 - allRobotMoves_00001_00003_00002)
+{-1..1}
+BOOL aux60 #|aux59|
+DISCRETE aux61 #( - allRobotMoves_00001_00004_00002 + allRobotMoves_00001_00003_00002)
+{-1..1}
+BOOL aux62 #|aux61|
+DISCRETE aux63 #(allRobotMoves_00001_00004_00001 - allRobotMoves_00001_00005_00001)
+{-1..1}
+BOOL aux64 #|aux63|
+DISCRETE aux65 #(allRobotMoves_00001_00004_00002 - allRobotMoves_00001_00005_00002)
+{-1..1}
+BOOL aux66 #|aux65|
+DISCRETE aux67 #(allRobotMoves_00001_00005_00001 - allRobotMoves_00001_00006_00001)
+{-1..1}
+BOOL aux68 #|aux67|
+DISCRETE aux69 #(allRobotMoves_00001_00005_00002 - allRobotMoves_00001_00006_00002)
+{-1..1}
+BOOL aux70 #|aux69|
+DISCRETE aux71 #(allRobotMoves_00002_00002_00002 - allRobotMoves_00002_00003_00002)
+{-1..1}
+BOOL aux72 #|aux71|
+DISCRETE aux73 #(allRobotMoves_00002_00003_00001 - allRobotMoves_00002_00004_00001)
+{-1..1}
+BOOL aux74 #|aux73|
+DISCRETE aux75 #(allRobotMoves_00002_00003_00002 - allRobotMoves_00002_00004_00002)
+{-1..1}
+BOOL aux76 #|aux75|
+DISCRETE aux77 #( - allRobotMoves_00002_00005_00001 + allRobotMoves_00002_00004_00001)
+{-1..1}
+BOOL aux78 #|aux77|
+DISCRETE aux79 #( - allRobotMoves_00002_00005_00002 + allRobotMoves_00002_00004_00002)
+{-1..1}
+BOOL aux80 #|aux79|
+DISCRETE aux81 #(allRobotMoves_00002_00005_00001 - allRobotMoves_00002_00006_00001)
+{-1..1}
+BOOL aux82 #|aux81|
+DISCRETE aux83 #(allRobotMoves_00002_00005_00002 - allRobotMoves_00002_00006_00002)
+{-1..1}
+BOOL aux84 #|aux83|
+DISCRETE aux85 #(5 + allRobotMoves_00001_00003_00002)
+{6..8}
+DISCRETE aux86 #Mapping({1=1, 2=2}, aux28)
+{1..2}
+DISCRETE aux87 #(5 + allRobotMoves_00002_00002_00002)
+{7..8}
+DISCRETE aux88 #Mapping({1=1, 2=2}, aux27)
+{1..2}
+DISCRETE aux89 #(-5 + 5*allRobotMoves_00002_00003_00001 + allRobotMoves_00002_00003_00002)
+{3..9}
+**CONSTRAINTS**
+w-inintervalset(aux89, [3,3,7,9])
+**VARIABLES**
+DISCRETE aux90 #(-5 + 5*allRobotMoves_00002_00004_00001 + allRobotMoves_00002_00004_00002)
+{3..10}
+**CONSTRAINTS**
+w-inintervalset(aux90, [3,3,7,10])
+**VARIABLES**
+**TUPLELIST**
+aux91 3 2
+0 1 
+1 1 
+2 2 
+**VARIABLES**
+ALIAS aux91[3,2]=[[0, 1], [1, 1], [2, 2]]
+**TUPLELIST**
+robot_pos 2 2
+2 1 
+2 2 
+**VARIABLES**
+ALIAS robot_pos[2,2]=[[2, 1], [2, 2]]
+**TUPLELIST**
+map 2 5
+-1 -1 0 -1 -1 
+1 2 0 0 0 
+**VARIABLES**
+ALIAS map[2,5]=[[-1, -1, 0, -1, -1], [1, 2, 0, 0, 0]]
+**TUPLELIST**
+task_dest 2 2
+2 5 
+2 4 
+**VARIABLES**
+ALIAS task_dest[2,2]=[[2, 5], [2, 4]]
+**VARIABLES**
+ALIAS task_obj[2]=[1, 2]
+**SEARCH**
+PRINT[[allRobotMoves_00001_00002_00002],[allRobotMoves_00001_00003_00002],[allRobotMoves_00001_00004_00001],[allRobotMoves_00001_00004_00002],[allRobotMoves_00001_00005_00001],[allRobotMoves_00001_00005_00002],[allRobotMoves_00001_00006_00001],[allRobotMoves_00001_00006_00002],[allRobotMoves_00002_00002_00002],[allRobotMoves_00002_00003_00001],[allRobotMoves_00002_00003_00002],[allRobotMoves_00002_00004_00001],[allRobotMoves_00002_00004_00002],[allRobotMoves_00002_00005_00001],[allRobotMoves_00002_00005_00002],[allRobotMoves_00002_00006_00001],[allRobotMoves_00002_00006_00002],[invContents_00001_00002],[invContents_00001_00003],[invContents_00001_00004],[invContents_00001_00005],[invContents_00001_00006],[invContents_00002_00002],[invContents_00002_00003],[invContents_00002_00004],[invContents_00002_00005],[invContents_00002_00006],[successes_00001_00005],[successes_00002_00004],[successes_00002_00005],[tasks_00001],[tasks_00002]]
+VARORDER STATIC [allRobotMoves_00001_00002_00002, allRobotMoves_00001_00003_00002, allRobotMoves_00001_00004_00001, allRobotMoves_00001_00004_00002, allRobotMoves_00001_00005_00001, allRobotMoves_00001_00005_00002, allRobotMoves_00001_00006_00001, allRobotMoves_00001_00006_00002, allRobotMoves_00002_00002_00002, allRobotMoves_00002_00003_00001, allRobotMoves_00002_00003_00002, allRobotMoves_00002_00004_00001, allRobotMoves_00002_00004_00002, allRobotMoves_00002_00005_00001, allRobotMoves_00002_00005_00002, allRobotMoves_00002_00006_00001, allRobotMoves_00002_00006_00002, invContents_00001_00002, invContents_00001_00003, invContents_00001_00004, invContents_00001_00005, invContents_00001_00006, invContents_00002_00002, invContents_00002_00003, invContents_00002_00004, invContents_00002_00005, invContents_00002_00006, successes_00001_00005, successes_00002_00004, successes_00002_00005, tasks_00001, tasks_00002]
+**CONSTRAINTS**
+abs(aux60, aux59)
+abs(aux62, aux61)
+abs(aux64, aux63)
+abs(aux66, aux65)
+abs(aux68, aux67)
+abs(aux70, aux69)
+abs(aux72, aux71)
+abs(aux74, aux73)
+abs(aux76, aux75)
+abs(aux78, aux77)
+abs(aux80, aux79)
+abs(aux82, aux81)
+abs(aux84, aux83)
+table([aux28, aux86], aux91)
+table([aux27, aux88], aux91)
+reify(ineq(aux22, 1, -1), aux13)
+reify(ineq(aux20, 1, -1), aux14)
+reify(ineq(1, aux21, 0), aux15)
+reify(ineq(1, aux23, 0), aux16)
+reify(ineq(1, aux24, 0), aux17)
+reify(ineq(aux25, 1, -1), aux18)
+reify(ineq(1, aux26, 0), aux19)
+watchelement_one([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], aux45, aux20)
+watchelement_one([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], aux44, aux21)
+watchelement_one([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], aux46, aux22)
+watchelement_one([-1, -1, 0, -1, -1, 1, 2, 0, 0, 0], aux47, aux23)
+watchelement_one([-1, 0, -1, -1, 1, 2, 0, 0, 0], aux56, aux24)
+watchelement_one([-1, -1, 0, -1, -1, 1, 2, 0, 0], aux43, aux25)
+watchelement_one([-1, 0, -1, -1, 1, 2, 0, 0], aux57, aux26)
+watchelement_one([2, 0], aux58, aux27)
+watchelement_one([1, 2, 0], allRobotMoves_00001_00003_00002, aux28)
+watchelement_one([1, 2], allRobotMoves_00001_00002_00002, aux29)
+reify(diseq(allRobotMoves_00001_00004_00002,allRobotMoves_00002_00004_00002), aux30)
+reify(diseq(allRobotMoves_00001_00004_00001,allRobotMoves_00002_00004_00001), aux31)
+reify(diseq(allRobotMoves_00002_00003_00002,allRobotMoves_00001_00003_00002), aux32)
+reify(diseq(allRobotMoves_00001_00005_00001,allRobotMoves_00002_00006_00001), aux33)
+reify(diseq(allRobotMoves_00001_00005_00002,allRobotMoves_00002_00006_00002), aux34)
+reify(diseq(allRobotMoves_00001_00004_00001,allRobotMoves_00002_00005_00001), aux35)
+reify(diseq(allRobotMoves_00001_00004_00002,allRobotMoves_00002_00005_00002), aux36)
+reify(diseq(allRobotMoves_00002_00006_00001,allRobotMoves_00001_00006_00001), aux37)
+reify(diseq(allRobotMoves_00002_00006_00002,allRobotMoves_00001_00006_00002), aux38)
+reify(diseq(allRobotMoves_00002_00005_00001,allRobotMoves_00001_00005_00001), aux39)
+reify(diseq(allRobotMoves_00002_00005_00002,allRobotMoves_00001_00005_00002), aux40)
+reify(diseq(allRobotMoves_00001_00003_00002,allRobotMoves_00002_00004_00002), aux41)
+diseq(allRobotMoves_00001_00002_00002,allRobotMoves_00002_00003_00002)
+reify(gaceq(invContents_00002_00005,invContents_00002_00006), aux48)
+reify(gaceq(invContents_00002_00004,invContents_00002_00005), aux49)
+reify(gaceq(invContents_00002_00003,invContents_00002_00004), aux50)
+reify(gaceq(invContents_00002_00002,invContents_00002_00003), aux51)
+reify(gaceq(invContents_00001_00005,invContents_00001_00006), aux52)
+reify(gaceq(invContents_00001_00002,invContents_00001_00003), aux53)
+reify(gaceq(invContents_00001_00003,invContents_00001_00004), aux54)
+reify(gaceq(invContents_00001_00004,invContents_00001_00005), aux55)
+reifyimply(gaceq(aux6,aux25), !aux18)
+reifyimply(w-literal(aux6,1), aux18)
+reifyimply(gaceq(aux20,aux7), !aux14)
+reifyimply(w-literal(aux7,1), aux14)
+reifyimply(gaceq(aux21,aux8), aux15)
+reifyimply(w-literal(aux8,1), !aux15)
+reifyimply(gaceq(aux26,aux9), aux19)
+reifyimply(w-literal(aux9,1), !aux19)
+reifyimply(gaceq(aux10,aux24), aux17)
+reifyimply(w-literal(aux10,1), !aux17)
+reifyimply(gaceq(aux11,aux23), aux16)
+reifyimply(w-literal(aux11,1), !aux16)
+reifyimply(gaceq(aux12,aux22), !aux13)
+reifyimply(w-literal(aux12,1), aux13)
+weightedsumleq([-1,1],[allRobotMoves_00001_00004_00001,aux62],-1)
+sumleq([aux64,aux66],1)
+sumleq([aux68,aux70],1)
+weightedsumleq([1,-1],[aux72,allRobotMoves_00002_00003_00001],-1)
+sumleq([aux74,aux76],1)
+sumleq([aux78,aux80],1)
+sumleq([aux82,aux84],1)
+diseq(allRobotMoves_00002_00002_00002,allRobotMoves_00001_00002_00002)
+watched-or({watched-and({diseq(2,allRobotMoves_00002_00003_00001),w-literal(aux32,1)}),watched-and({w-literal(aux32,0),diseq(2,allRobotMoves_00002_00003_00001)}),watched-and({w-literal(allRobotMoves_00002_00003_00001,2),w-literal(aux32,1)})})
+watched-or({watched-and({w-literal(aux31,1),w-literal(aux30,1)}),watched-and({w-literal(aux31,1),w-literal(aux30,0)}),watched-and({w-literal(aux30,1),w-literal(aux31,0)})})
+watched-or({watched-and({w-literal(aux39,1),w-literal(aux40,1)}),watched-and({w-literal(aux39,1),w-literal(aux40,0)}),watched-and({w-literal(aux40,1),w-literal(aux39,0)})})
+watched-or({watched-and({w-literal(aux37,1),w-literal(aux38,1)}),watched-and({w-literal(aux37,1),w-literal(aux38,0)}),watched-and({w-literal(aux38,1),w-literal(aux37,0)})})
+watched-or({diseq(2,allRobotMoves_00002_00003_00001),w-literal(allRobotMoves_00002_00003_00001,2)})
+watched-or({watched-and({w-literal(aux41,1),diseq(2,allRobotMoves_00002_00004_00001)}),watched-and({w-literal(aux41,1),w-literal(allRobotMoves_00002_00004_00001,2)}),watched-and({w-literal(aux41,0),diseq(2,allRobotMoves_00002_00004_00001)})})
+watched-or({watched-and({w-literal(aux35,1),w-literal(aux36,1)}),watched-and({w-literal(aux35,1),w-literal(aux36,0)}),watched-and({w-literal(aux36,1),w-literal(aux35,0)})})
+watched-or({watched-and({w-literal(aux33,1),w-literal(aux34,1)}),watched-and({w-literal(aux33,1),w-literal(aux34,0)}),watched-and({w-literal(aux34,1),w-literal(aux33,0)})})
+watched-or({watched-and({watchelement_one([tasks_00001, tasks_00002], aux29, 1),gaceq(invContents_00001_00002,aux29)}),w-literal(invContents_00001_00002,0)})
+watched-or({watched-and({w-literal(aux53,1),ineq(0, aux28, -1),diseq(invContents_00001_00002,0)}),watched-and({w-inintervalset(aux85,[3,3,8,8]),w-literal(aux53,1)}),watched-and({watched-or({w-literal(aux53,1),watched-and({watchelement_one([tasks_00001, tasks_00002], aux86, 1),w-inintervalset(aux28,[1,2]),gaceq(invContents_00001_00003,aux28)})}),ineq(0, aux28, -1),w-literal(invContents_00001_00002,0)})})
+watched-or({watched-and({w-literal(aux54,1),w-inintervalset(aux43,[3,3,8,9])}),watched-and({w-literal(allRobotMoves_00001_00004_00001,2),w-literal(allRobotMoves_00001_00004_00002,4),w-literal(invContents_00001_00003,2),w-literal(invContents_00001_00004,0)}),watched-and({w-literal(aux54,1),diseq(invContents_00001_00003,0),ineq(0, aux25, -1)}),watched-and({watched-or({w-literal(aux54,1),watched-and({watchelement_one([tasks_00001, tasks_00002], aux6, 1),w-inintervalset(aux25,[1,2]),gaceq(invContents_00001_00004,aux25)})}),w-literal(invContents_00001_00003,0),ineq(0, aux25, -1)})})
+watched-or({watched-and({w-literal(aux55,1),ineq(0, aux20, -1),diseq(invContents_00001_00004,0)}),watched-and({watched-or({w-literal(aux55,1),watched-and({w-inintervalset(aux20,[1,2]),watchelement_one([tasks_00001, tasks_00002], aux7, 1),gaceq(invContents_00001_00005,aux20)})}),ineq(0, aux20, -1),w-literal(invContents_00001_00004,0)}),watched-and({w-literal(aux55,1),w-inintervalset(aux45,[3,3,8,10])}),watched-and({w-literal(allRobotMoves_00001_00005_00001,2),w-literal(allRobotMoves_00001_00005_00002,4),w-literal(invContents_00001_00004,2),w-literal(invContents_00001_00005,0)}),watched-and({w-literal(allRobotMoves_00001_00005_00001,2),w-literal(allRobotMoves_00001_00005_00002,5),w-literal(invContents_00001_00004,1),w-literal(invContents_00001_00005,0)})})
+watched-or({watched-and({w-literal(aux52,1),w-inintervalset(aux44,[3,3,8,10])}),watched-and({w-literal(allRobotMoves_00001_00006_00001,2),w-literal(allRobotMoves_00001_00006_00002,4),w-literal(invContents_00001_00005,2),w-literal(invContents_00001_00006,0)}),watched-and({w-literal(allRobotMoves_00001_00006_00001,2),w-literal(allRobotMoves_00001_00006_00002,5),w-literal(invContents_00001_00005,1),w-literal(invContents_00001_00006,0)}),watched-and({ineq(0, aux21, -1),w-literal(invContents_00001_00005,0),watched-or({watched-and({w-inintervalset(aux21,[1,2]),watchelement_one([tasks_00001, tasks_00002], aux8, 1),gaceq(invContents_00001_00006,aux21)}),w-literal(aux52,1)})}),watched-and({w-literal(aux52,1),ineq(0, aux21, -1),diseq(invContents_00001_00005,0)})})
+watched-or({watched-and({w-literal(invContents_00002_00002,0),w-inintervalset(aux87,[3,3,8,8])}),watched-and({watched-or({w-literal(invContents_00002_00002,0),watched-and({gaceq(invContents_00002_00002,aux27),watchelement_one([tasks_00001, tasks_00002], aux88, 2),w-inintervalset(aux27,[1,2])})}),ineq(0, aux27, -1)})})
+watched-or({watched-and({w-literal(invContents_00002_00002,2),w-literal(invContents_00002_00003,0),w-literal(allRobotMoves_00002_00003_00001,2),w-literal(allRobotMoves_00002_00003_00002,4)}),watched-and({w-inintervalset(aux89,[3,3,8,9]),w-literal(aux51,1)}),watched-and({w-literal(invContents_00002_00002,0),ineq(0, aux26, -1),watched-or({w-literal(aux51,1),watched-and({gaceq(aux26,invContents_00002_00003),watchelement_one([tasks_00001, tasks_00002], aux9, 2),w-inintervalset(aux26,[1,2])})})}),watched-and({diseq(invContents_00002_00002,0),ineq(0, aux26, -1),w-literal(aux51,1)})})
+watched-or({watched-and({w-literal(invContents_00002_00003,0),watched-or({watched-and({watchelement_one([tasks_00001, tasks_00002], aux10, 2),gaceq(invContents_00002_00004,aux24),w-inintervalset(aux24,[1,2])}),w-literal(aux50,1)}),ineq(0, aux24, -1)}),watched-and({diseq(invContents_00002_00003,0),w-literal(aux50,1),ineq(0, aux24, -1)}),watched-and({w-literal(invContents_00002_00003,1),w-literal(invContents_00002_00004,0),w-literal(allRobotMoves_00002_00004_00001,2),w-literal(allRobotMoves_00002_00004_00002,5)}),watched-and({w-literal(invContents_00002_00003,2),w-literal(invContents_00002_00004,0),w-literal(allRobotMoves_00002_00004_00001,2),w-literal(allRobotMoves_00002_00004_00002,4)}),watched-and({w-inintervalset(aux90,[3,3,8,10]),w-literal(aux50,1)})})
+watched-or({watched-and({w-literal(invContents_00002_00004,1),w-literal(invContents_00002_00005,0),w-literal(allRobotMoves_00002_00005_00001,2),w-literal(allRobotMoves_00002_00005_00002,5)}),watched-and({w-literal(invContents_00002_00004,2),w-literal(invContents_00002_00005,0),w-literal(allRobotMoves_00002_00005_00001,2),w-literal(allRobotMoves_00002_00005_00002,4)}),watched-and({w-inintervalset(aux47,[3,3,8,10]),w-literal(aux49,1)}),watched-and({w-literal(invContents_00002_00004,0),ineq(0, aux23, -1),watched-or({w-literal(aux49,1),watched-and({watchelement_one([tasks_00001, tasks_00002], aux11, 2),gaceq(invContents_00002_00005,aux23),w-inintervalset(aux23,[1,2])})})}),watched-and({diseq(invContents_00002_00004,0),ineq(0, aux23, -1),w-literal(aux49,1)})})
+watched-or({watched-and({w-literal(invContents_00002_00005,1),w-literal(invContents_00002_00006,0),w-literal(allRobotMoves_00002_00006_00001,2),w-literal(allRobotMoves_00002_00006_00002,5)}),watched-and({w-literal(invContents_00002_00005,2),w-literal(invContents_00002_00006,0),w-literal(allRobotMoves_00002_00006_00001,2),w-literal(allRobotMoves_00002_00006_00002,4)}),watched-and({w-literal(invContents_00002_00005,0),ineq(0, aux22, -1),watched-or({w-literal(aux48,1),watched-and({watchelement_one([tasks_00001, tasks_00002], aux12, 2),gaceq(invContents_00002_00006,aux22),w-inintervalset(aux22,[1,2])})})}),watched-and({diseq(invContents_00002_00005,0),ineq(0, aux22, -1),w-literal(aux48,1)}),watched-and({w-inintervalset(aux46,[3,3,8,10]),w-literal(aux48,1)})})
+watched-or({reify(watched-and({w-literal(invContents_00002_00005,1),w-literal(allRobotMoves_00002_00005_00001,2),w-literal(allRobotMoves_00002_00005_00002,5)}), successes_00001_00005),reify(watched-and({w-literal(allRobotMoves_00001_00005_00001,2),w-literal(allRobotMoves_00001_00005_00002,5),w-literal(invContents_00001_00005,1)}), successes_00001_00005)})
+watched-or({watched-and({w-literal(invContents_00002_00006,1),w-literal(allRobotMoves_00002_00006_00001,2),w-literal(allRobotMoves_00002_00006_00002,5)}),watched-and({w-literal(allRobotMoves_00001_00006_00001,2),w-literal(allRobotMoves_00001_00006_00002,5),w-literal(invContents_00001_00006,1)}),w-literal(successes_00001_00005,1)})
+watched-or({reify(watched-and({w-literal(allRobotMoves_00001_00004_00001,2),w-literal(allRobotMoves_00001_00004_00002,4),w-literal(invContents_00001_00004,2)}), successes_00002_00004),reify(watched-and({w-literal(invContents_00002_00004,2),w-literal(allRobotMoves_00002_00004_00001,2),w-literal(allRobotMoves_00002_00004_00002,4)}), successes_00002_00004)})
+watched-or({reify(watched-or({watched-and({w-literal(invContents_00002_00005,2),w-literal(allRobotMoves_00002_00005_00001,2),w-literal(allRobotMoves_00002_00005_00002,4)}),w-literal(successes_00002_00004,1)}), successes_00002_00005),reify(watched-or({w-literal(successes_00002_00004,1),watched-and({w-literal(allRobotMoves_00001_00005_00001,2),w-literal(allRobotMoves_00001_00005_00002,4),w-literal(invContents_00001_00005,2)})}), successes_00002_00005)})
+watched-or({watched-and({w-literal(invContents_00002_00006,2),w-literal(allRobotMoves_00002_00006_00001,2),w-literal(allRobotMoves_00002_00006_00002,4)}),w-literal(successes_00002_00005,1),watched-and({w-literal(allRobotMoves_00001_00006_00001,2),w-literal(allRobotMoves_00001_00006_00002,4),w-literal(invContents_00001_00006,2)})})
+weightedsumleq([1,5,1],[-6,allRobotMoves_00002_00004_00001,allRobotMoves_00002_00004_00002],aux56)
+weightedsumgeq([1,5,1],[-6,allRobotMoves_00002_00004_00001,allRobotMoves_00002_00004_00002],aux56)
+weightedsumleq([1,5,1],[-6,allRobotMoves_00002_00003_00001,allRobotMoves_00002_00003_00002],aux57)
+weightedsumgeq([1,5,1],[-6,allRobotMoves_00002_00003_00001,allRobotMoves_00002_00003_00002],aux57)
+sumleq([-1,allRobotMoves_00002_00002_00002],aux58)
+sumgeq([-1,allRobotMoves_00002_00002_00002],aux58)
+weightedsumleq([1,-1],[allRobotMoves_00001_00002_00002,allRobotMoves_00001_00003_00002],aux59)
+weightedsumgeq([1,-1],[allRobotMoves_00001_00002_00002,allRobotMoves_00001_00003_00002],aux59)
+weightedsumleq([-1,1],[allRobotMoves_00001_00004_00002,allRobotMoves_00001_00003_00002],aux61)
+weightedsumgeq([-1,1],[allRobotMoves_00001_00004_00002,allRobotMoves_00001_00003_00002],aux61)
+weightedsumleq([1,-1],[allRobotMoves_00001_00004_00001,allRobotMoves_00001_00005_00001],aux63)
+weightedsumgeq([1,-1],[allRobotMoves_00001_00004_00001,allRobotMoves_00001_00005_00001],aux63)
+weightedsumleq([1,-1],[allRobotMoves_00001_00004_00002,allRobotMoves_00001_00005_00002],aux65)
+weightedsumgeq([1,-1],[allRobotMoves_00001_00004_00002,allRobotMoves_00001_00005_00002],aux65)
+weightedsumleq([1,-1],[allRobotMoves_00001_00005_00001,allRobotMoves_00001_00006_00001],aux67)
+weightedsumgeq([1,-1],[allRobotMoves_00001_00005_00001,allRobotMoves_00001_00006_00001],aux67)
+weightedsumleq([1,-1],[allRobotMoves_00001_00005_00002,allRobotMoves_00001_00006_00002],aux69)
+weightedsumgeq([1,-1],[allRobotMoves_00001_00005_00002,allRobotMoves_00001_00006_00002],aux69)
+weightedsumleq([1,-1],[allRobotMoves_00002_00002_00002,allRobotMoves_00002_00003_00002],aux71)
+weightedsumgeq([1,-1],[allRobotMoves_00002_00002_00002,allRobotMoves_00002_00003_00002],aux71)
+weightedsumleq([1,-1],[allRobotMoves_00002_00003_00001,allRobotMoves_00002_00004_00001],aux73)
+weightedsumgeq([1,-1],[allRobotMoves_00002_00003_00001,allRobotMoves_00002_00004_00001],aux73)
+weightedsumleq([1,-1],[allRobotMoves_00002_00003_00002,allRobotMoves_00002_00004_00002],aux75)
+weightedsumgeq([1,-1],[allRobotMoves_00002_00003_00002,allRobotMoves_00002_00004_00002],aux75)
+weightedsumleq([-1,1],[allRobotMoves_00002_00005_00001,allRobotMoves_00002_00004_00001],aux77)
+weightedsumgeq([-1,1],[allRobotMoves_00002_00005_00001,allRobotMoves_00002_00004_00001],aux77)
+weightedsumleq([-1,1],[allRobotMoves_00002_00005_00002,allRobotMoves_00002_00004_00002],aux79)
+weightedsumgeq([-1,1],[allRobotMoves_00002_00005_00002,allRobotMoves_00002_00004_00002],aux79)
+weightedsumleq([1,-1],[allRobotMoves_00002_00005_00001,allRobotMoves_00002_00006_00001],aux81)
+weightedsumgeq([1,-1],[allRobotMoves_00002_00005_00001,allRobotMoves_00002_00006_00001],aux81)
+weightedsumleq([1,-1],[allRobotMoves_00002_00005_00002,allRobotMoves_00002_00006_00002],aux83)
+weightedsumgeq([1,-1],[allRobotMoves_00002_00005_00002,allRobotMoves_00002_00006_00002],aux83)
+sumleq([5,allRobotMoves_00001_00003_00002],aux85)
+sumgeq([5,allRobotMoves_00001_00003_00002],aux85)
+sumleq([5,allRobotMoves_00002_00002_00002],aux87)
+sumgeq([5,allRobotMoves_00002_00002_00002],aux87)
+weightedsumleq([1,5,1],[-5,allRobotMoves_00002_00003_00001,allRobotMoves_00002_00003_00002],aux89)
+weightedsumgeq([1,5,1],[-5,allRobotMoves_00002_00003_00001,allRobotMoves_00002_00003_00002],aux89)
+weightedsumleq([1,5,1],[-5,allRobotMoves_00002_00004_00001,allRobotMoves_00002_00004_00002],aux90)
+weightedsumgeq([1,5,1],[-5,allRobotMoves_00002_00004_00001,allRobotMoves_00002_00004_00002],aux90)
+weightedsumleq([5,1,1],[allRobotMoves_00001_00004_00001,allRobotMoves_00001_00004_00002,-5],aux43)
+weightedsumgeq([5,1,1],[allRobotMoves_00001_00004_00001,allRobotMoves_00001_00004_00002,-5],aux43)
+weightedsumleq([5,1,1],[allRobotMoves_00001_00006_00001,allRobotMoves_00001_00006_00002,-5],aux44)
+weightedsumgeq([5,1,1],[allRobotMoves_00001_00006_00001,allRobotMoves_00001_00006_00002,-5],aux44)
+weightedsumleq([5,1,1],[allRobotMoves_00001_00005_00001,allRobotMoves_00001_00005_00002,-5],aux45)
+weightedsumgeq([5,1,1],[allRobotMoves_00001_00005_00001,allRobotMoves_00001_00005_00002,-5],aux45)
+weightedsumleq([5,1,1],[allRobotMoves_00002_00006_00001,allRobotMoves_00002_00006_00002,-5],aux46)
+weightedsumgeq([5,1,1],[allRobotMoves_00002_00006_00001,allRobotMoves_00002_00006_00002,-5],aux46)
+weightedsumleq([5,1,1],[allRobotMoves_00002_00005_00001,allRobotMoves_00002_00005_00002,-5],aux47)
+weightedsumgeq([5,1,1],[allRobotMoves_00002_00005_00001,allRobotMoves_00002_00005_00002,-5],aux47)
+**EOF**

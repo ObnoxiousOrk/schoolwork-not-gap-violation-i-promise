@@ -1,0 +1,79 @@
+language ESSENCE' 1.0
+
+given nrows : int(1..)
+given ncols : int(1..)
+
+given nrobots : int(1..)
+given robot_pos : matrix indexed by [int(1..nrobots), int(1,2)] of int(1..max(ncols, nrows))
+
+given map : matrix indexed by [int(1..nrows), int(1..ncols)] of int(-1..)
+
+given ntasks : int(1..)
+given task_obj : matrix indexed by [int(1..ntasks)] of int(1..max(flatten(map)))
+given task_dest : matrix indexed by [int(1..ntasks), int(1,2)] of int(1..max(ncols, nrows))
+
+given time_limit : int(1..)
+
+letting TIME be time_limit + 1
+
+$                                  robot doing task    task_obj      task_dest
+$ find tasks be matrix indexed by [int(1..nrobots), int(1..ntasks), int(1,2)] of int(1..max(max(flatten(map)), max(ncols, nrows)))
+
+find allRobotMoves : matrix indexed by [int(1..nrobots), int(1..TIME), int(1,2)] of int(1..max(nrows, ncols))
+$ list of moves for each robot where the list length cannot exceed the time_limit and move is [row, col], starts with initial robot pos in it
+
+find invContents : matrix indexed by [int(1..nrobots), int(1..TIME)] of int(0..ntasks)
+$ 0 representing empty inventory and 1..ntasks representing the current object held.
+$ inventory contents of each robot at each timestep, corrosponding with move number.
+$ taken together, allRobotMoves and invContents describes the state of where the robot moves, and what its got in its inventory at any point
+
+find successes : matrix indexed by [int(1..ntasks), int(1..TIME)] of bool
+
+branching on [successes]
+
+
+such that
+
+$ Robots all start at their start position.
+forAll robot : int(1..nrobots) . allRobotMoves[robot, 1, 1] = robot_pos[robot, 1],
+forAll robot : int(1..nrobots) . allRobotMoves[robot, 1, 2] = robot_pos[robot, 2],
+
+
+$ all tasks should be completed in the end, and start uncompleted
+forAll task : int(1..ntasks) . successes[task, 1] = false,
+$ forAll task : int(1..ntasks) . successes[task, TIME] = true,
+
+$ inventory should start empty
+forAll robot : int(1..nrobots) . invContents[robot, 1] = 0,
+
+$ Robots can only move by 1 space in each of the cardinal directions.
+$ Prior space and current space can vary by no more than 1 in each of the 4 possible directions from one move to the next
+$ For all robots, check that the current move is within this 1 move constraint from the prior one
+forAll robot : int(1..nrobots) .
+    forAll move : int(2..TIME) . $ robots should check given initial move, so start from move 2
+        $ robot should move by at most 1 space in either x or y directions
+        (|allRobotMoves[robot, move - 1, 1] - allRobotMoves[robot, move, 1]| +
+        |allRobotMoves[robot, move - 1, 2] - allRobotMoves[robot, move, 2]|) <= 1
+        /\
+        $ robot cannot move outside the bounds of the problem (for non-square grids)
+        allRobotMoves[robot, move, 1] <= nrows /\ allRobotMoves[robot, move, 2] <= ncols,
+
+$ $ update inv when robot picks up task_obj
+forAll task : int(1..ntasks) .
+    forAll robot : int(1..nrobots) .
+        forAll move : int(2..TIME) .
+            (map[allRobotMoves[robot, move, 1], allRobotMoves[robot, move, 2]] = task_obj[task])
+                -> (invContents[robot, move] = task_obj[task] \/ true),
+
+$ update successes when task_obj is dropped off
+$ forAll task : int(1..ntasks) .
+$     forAll robot : int(1..nrobots) .
+$         forAll move : int(2..TIME) .
+$             (allRobotMoves[robot, move, 1] = task_dest[task, 1] /\
+$              allRobotMoves[robot, move, 2] = task_dest[task, 2])
+$                 ->
+$             successes[task, move] = true,
+
+
+
+true
